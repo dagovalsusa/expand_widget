@@ -39,9 +39,11 @@ class ExpandArrow extends StatefulWidget {
 class _ExpandArrowState extends State<ExpandArrow> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(4),
-      child: Tooltip(
+    return Column(
+      // direction: Axis.vertical,
+      children: [
+      Text(message),
+      Tooltip(
         message: message,
         child: InkResponse(
           child: RotationTransition(
@@ -55,7 +57,7 @@ class _ExpandArrowState extends State<ExpandArrow> {
           onTap: widget.onTap,
         ),
       ),
-    );
+    ]);
   }
 
   /// Shows a tooltip message depending on the [animation] state.
